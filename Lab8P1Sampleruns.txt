@@ -1,0 +1,59 @@
+Select from the following menu:
+	0. Exit program
+	1. Insert item into the list
+	2. Remove item from the list
+	3. Get item from the list
+	4. Search for a specific item in the list
+	5. Clear the list
+	6. Print size and content of the list
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	Enter item: cat
+	Enter position to insert item in: 0
+Item cat inserted into position 0 in the list.
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	Enter item: dog
+	Enter position to insert item in: 1
+Item dog inserted into position 1 in the list.
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	Enter item: fish
+	Enter position to insert item in: 2
+Item fish inserted into position 2 in the list.
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	Enter item: crab
+	Enter position to insert item in: 3
+Item crab inserted into position 3 in the list.
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	Enter item: bird
+	Enter position to insert item in: 4
+Item bird inserted into position 4 in the list.
+
+Make your menu selection now: 6
+	List of size 5 has the following items: cat dog fish crab bird
+
+Make your menu selection now: 4
+You are now searching for an item on the list.
+	Enter item: cat
+The item was found at 0
+
+Make your menu selection now: 4
+You are now searching for an item on the list.
+	Enter item: crab
+The item was found at 3
+
+Make your menu selection now: 4
+You are now searching for an item on the list.
+	Enter item: cra
+The item was not found in the list
+
+Make your menu selection now: 0
+Exiting program... Goodbye!
