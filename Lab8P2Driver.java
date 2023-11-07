@@ -70,30 +70,26 @@ public class Lab8P2Driver {
      * 
      * @param list the list to search the item for
      * @return An integer that represents the index where an item 
-     * was found. If no item was found, returns the index as a 
-     * negative.
+     *  was found. If no item was found, returns the index minus
+     *  the list length + 1.
      */
     public static int search(String key, ListArrayBasedPlus list) {
         int len = list.size();
         int i = 0;
         while(i < len) {
             int compare = key.compareTo((String)list.get(i));
-            if(compare == 0) {
-                break;
+            if(compare == 0) { //successful find
+                return i;
             } 
-            //if the key is less than the item at the index
-            else if(compare < 0) { 
-                i *= -1;
+            //item is no longer greater than the sk
+            else if(compare < 0) {
                 break;
             }
             else {
                 i++;
             }
         }
-        if(i == len) {
-            i *= -1;
-        }
-        return i;
+        return i-len-1;
     }
 
     public static void searchList(ListArrayBasedPlus list) throws IOException{
@@ -103,6 +99,7 @@ public class Lab8P2Driver {
         System.out.println(itemName);
 
         int result = search(itemName, list);
+        System.out.printf("search: %d%n", result);
         if(result < 0) {
             System.out.printf("The item was not found in the list%n%n");
         } else {
@@ -118,7 +115,7 @@ public class Lab8P2Driver {
 
         int position = search(itemName, list);
         if(position < 0) {
-            position *= -1;
+            position += 1 + list.size();
             list.add(position, itemName);
             System.out.printf("Item %s inserted into"+
                           " position %d in the list.%n%n", 
