@@ -1,7 +1,7 @@
 import java.io.*;
 
 /*
- * Purpose: Data Structure and Algorithms Lab 8 Problem 1
+ * Purpose: Data Structure and Algorithms Lab 8 Problem 2
  * Status: Complete and thoroughly tested
  * Last update: 11/07/22
  * Submitted:  11/07/22
@@ -11,7 +11,7 @@ import java.io.*;
  * @version: 2023.11.07
  */
 
-public class Lab8P1Driver {
+public class Lab8P2Driver {
     
     static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
 
@@ -97,22 +97,17 @@ public class Lab8P1Driver {
         }
     }
 
-    public static void addToList(ListInterface list) throws IOException{
+    public static void addToList(ListArrayBasedPlus list) throws IOException{
         System.out.print("You are now inserting an item"+
                          " into the list.\n\tEnter item: ");
         String itemName = stdin.readLine().trim();
         System.out.println(itemName);
 
-        System.out.print("\tEnter position to insert item in: ");
-        int position = Integer.parseInt(stdin.readLine().trim());
-        System.out.println(position);
-        if(position < 0 || position > list.size())
-            System.out.println("Position specified is out of range!\n");
-        else {
-            list.add(position, itemName);
-            System.out.printf("Item %s inserted into"+
-                              " position %d in the list.%n%n", itemName, position);
-        }
+        int position = search(itemName, list);
+        list.add(position, itemName);
+        System.out.printf("Item %s inserted into"+
+                          " position %d in the list.%n%n", 
+                          itemName, position);
     }
 
     public static void removeFromList(ListInterface list) throws IOException{
