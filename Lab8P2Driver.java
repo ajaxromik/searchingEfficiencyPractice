@@ -74,13 +74,22 @@ public class Lab8P2Driver {
      */
     public static int search(String key, ListArrayBasedPlus list) {
         int len = list.size();
-        for(int i = 0; i < len; i++) {
+        int i = 0;
+        while(i < len) {
             int compare = key.compareTo((String)list.get(i));
             if(compare == 0) {
-                return i;
+                break;
+            } 
+            //if the key is less than the item at the index
+            else if(compare < 0) { 
+                i = -1;
+                break;
+            }
+            else {
+                i++
             }
         }
-        return -1;
+        return i;
     }
 
     public static void searchList(ListArrayBasedPlus list) throws IOException{
