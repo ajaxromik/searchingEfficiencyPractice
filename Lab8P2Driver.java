@@ -66,8 +66,12 @@ public class Lab8P2Driver {
     }
 
     /**
-     * Searches for an item in the list that is equal to the key.
+     * Searches for an item in an ascendingly ordered list that is 
+     * equal to the key. If the list does not contain the key, the
+     * method will return a negative number that will be the 
+     * index where the item would fit into the list but minus (length + 1)
      * 
+     * @param key A key to use for searching with the compareTo method
      * @param list the list to search the item for
      * @return An integer that represents the index where an item 
      *  was found. If no item was found, returns the index minus
