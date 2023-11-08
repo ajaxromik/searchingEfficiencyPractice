@@ -10,7 +10,7 @@
  * @version: 2023.11.07
  */
 
-public class AscendinglyOrderedStringList {
+public class AscendinglyOrderedStringList implements AscendinglyOrderedStringListInterface {
 
     private String []items;
     private int numItems;
@@ -45,7 +45,7 @@ public class AscendinglyOrderedStringList {
     private void resize() {
         int currentLen = items.length;
         if(numItems == currentLen) { // if max is reached
-            Object[] tempItems = new Object[currentLen*2];
+            String[] tempItems = new String[currentLen*2];
             for(int i = 0; i < numItems; i++) {
                 tempItems[i] = items[i];
             }
@@ -66,8 +66,8 @@ public class AscendinglyOrderedStringList {
      *  the list length + 1.
 	 */
 	public int search(String key){
-		low = 0;
-		high = numItems - 1;
+		int low = 0, mid;
+		int high = numItems - 1;
 		while(low < high) {
 			
 			mid = (low+high)/2;
@@ -77,7 +77,8 @@ public class AscendinglyOrderedStringList {
 			else
 				high = mid;
 		}
-		if (sk.equals(items[low])) // low and high are equal and the range is 1 at this point
+		// low and high are equal and the range is 1 at this point
+		if (key.equals(items[low])) 
 			return low;
 		else //the list does not have the item
 			//if it's the last index, return the one after it
@@ -139,7 +140,24 @@ public class AscendinglyOrderedStringList {
 	 * @return The string that was removed from that index.
 	 */
 	public String remove(int index) throws ListIndexOutOfBoundsException{
-
+		String result;
+        if (index >= 0 && index < numItems)
+        {
+            result = items[index];
+            for (int pos = index+1; pos < numItems; pos++) 
+            {
+                items[pos-1] = items[pos];
+            }
+            numItems--;
+            items[numItems] = null;
+        }
+        else
+        {
+            // index out of range
+            throw new ListIndexOutOfBoundsException(
+                "ListIndexOutOfBoundsException on remove");
+        }  // end if
+        return result;
 	}
 
 	/**
