@@ -1,0 +1,70 @@
+Select from the following menu:
+	0. Exit program
+	1. Insert specified item into the list
+	2. Remove item from the list
+	3. Search list for a specified item
+	4. Clear the list
+	5. Print size and content of the list
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	Enter item: cat
+Item cat inserted into the list.
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	Enter item: dog
+Item dog inserted into the list.
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	Enter item: mallard
+Item mallard inserted into the list.
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	Enter item: aster
+Item aster inserted into the list.
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	Enter item: kitten
+Item kitten inserted into the list.
+
+Make your menu selection now: 5
+	List of size 5 has the following items: aster cat dog kitten mallard
+
+Make your menu selection now: 3
+You are now searching for an item on the list.
+	Enter item: kitt
+The item was not found in the list
+
+Make your menu selection now: 3
+You are now searching for an item on the list.
+	Enter item: kitten
+The item was found at 3
+
+Make your menu selection now: 3
+You are now searching for an item on the list.
+	Enter item: kittens
+The item was not found in the list
+
+Make your menu selection now: 3
+You are now searching for an item on the list.
+	Enter item: cat
+The item was found at 1
+
+Make your menu selection now: 2
+	Enter position to remove item from: 2
+Item dog removed from position 2 in the list.
+
+Make your menu selection now: 5
+	List of size 4 has the following items: aster cat kitten mallard
+
+Make your menu selection now: 4
+
+Make your menu selection now: 5
+	List is empty.
+
+Make your menu selection now: 0
+Exiting program... Goodbye!
