@@ -1,0 +1,69 @@
+Select from the following menu:
+	0. Exit program
+	1. Insert item into the list
+	2. Remove item from the list
+	3. Get item from the list
+	4. Search for a specific item in the list
+	5. Clear the list
+	6. Print size and content of the list
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	Enter item: cat
+Item cat inserted into position 0 in the list.
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	Enter item: dog
+Item dog inserted into position 1 in the list.
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	Enter item: mallard
+Item mallard inserted into position 2 in the list.
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	Enter item: goose
+Item goose inserted into position 2 in the list.
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	Enter item: hen
+Item hen inserted into position 3 in the list.
+
+Make your menu selection now: 6
+	List of size 5 has the following items: cat dog goose hen mallard
+
+Make your menu selection now: 4
+You are now searching for an item on the list.
+	Enter item: car
+search: -6
+The item was not found in the list
+
+Make your menu selection now: 4
+You are now searching for an item on the list.
+	Enter item: cat
+search: 0
+The item was found at 0
+
+Make your menu selection now: 4
+You are now searching for an item on the list.
+	Enter item: gooses
+search: -3
+The item was not found in the list
+
+Make your menu selection now: 4
+You are now searching for an item on the list.
+	Enter item: goo
+search: -4
+The item was not found in the list
+
+Make your menu selection now: 4
+You are now searching for an item on the list.
+	Enter item: goose
+search: 2
+The item was found at 2
+
+Make your menu selection now: 0
+Exiting program... Goodbye!
