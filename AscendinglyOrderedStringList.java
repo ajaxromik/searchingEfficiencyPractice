@@ -59,6 +59,7 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
 	 * does not contain the key, the method will return a negative 
 	 * number that will be the index where the item would fit into 
 	 * the list but minus (length + 1)
+	 * Precondition: The list must not be empty
      * 
      * @param key A key to use for searching with the compareTo method
      * @return An integer that represents the index where an item 
@@ -78,12 +79,13 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
 				high = mid;
 		}
 		// low and high are equal and the range is 1 at this point
-		if (key.equals(items[low])) 
+		int comparison = key.compareTo(items[low]);
+		if (comparison == 0) 
 			return low;
 		else //the list does not have the item
 			//if it's the last index, return the one after it
-			return (high == numItems - 1) ? 
-						(high - numItems) : low-1-numItems;
+			return (comparison > 0) ? 
+				  (high - numItems) : low-1-numItems;
 	}
 
 	/**
@@ -93,7 +95,7 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
 	 */
 	public void add(String item) throws ListIndexOutOfBoundsException{
 		resize();
-		int index = search(item);
+		int index = (numItems > 0) ? search(item) : -1;
         if (index < 0 && index >= -1-numItems)
         {
             // shifts items to make space at index

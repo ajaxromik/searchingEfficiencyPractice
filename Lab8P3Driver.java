@@ -61,32 +61,14 @@ public class Lab8P3Driver {
 
     }
 
-    /**
-     * Searches for an item in the list that is equal to the key.
-     * 
-     * @param list the list to search the item for
-     * @return An integer that represents the index where an item 
-     * was found. If no item was found, returns -1
-     */
-    public static int search(String key, AscendinglyOrderedStringList list) {
-        int len = list.size();
-        for(int i = 0; i < len; i++) {
-            int compare = key.compareTo((String)list.get(i));
-            if(compare == 0) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
     public static void searchList(AscendinglyOrderedStringList list) throws IOException{
         System.out.print("You are now searching for an item"+
                          " on the list.\n\tEnter item: ");
         String itemName = stdin.readLine().trim();
         System.out.println(itemName);
 
-        int result = search(itemName, list);
-        if(result == -1) {
+        int result = list.search(itemName);
+        if(result < 0) {
             System.out.printf("The item was not found in the list%n%n");
         } else {
             System.out.printf("The item was found at %d%n%n", result);
@@ -99,7 +81,7 @@ public class Lab8P3Driver {
         String itemName = stdin.readLine().trim();
         System.out.println(itemName);
 
-        int position = list.search(itemName);
+        int position = (list.size() > 0) ? list.search(itemName) : -1;
         if(position < 0) {
             list.add(itemName);
             System.out.printf("Item %s inserted into"+
